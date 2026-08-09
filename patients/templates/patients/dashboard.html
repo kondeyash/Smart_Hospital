@@ -1,0 +1,68 @@
+{% extends "base_no_nav.html" %}
+
+{% block content %}
+<style>
+/* Dashboard Card */
+.dashboard-card {
+    text-align: center;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0px 6px 16px rgba(0,0,0,0.1);
+    background: #ffffff;
+    margin-top: 40px;
+}
+
+/* Welcome Text */
+.dashboard-card .welcome {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 25px;
+}
+
+/* Dashboard Buttons */
+.dashboard-buttons {
+    margin-top: 20px;
+}
+
+.dashboard-btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 25px;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+/* Button Colors */
+.register-btn {
+    background: linear-gradient(135deg, #1565c0, #1abc9c);
+}
+.appointment-btn {
+    background: linear-gradient(135deg, #1abc9c, #1565c0);
+}
+.logout-btn {
+    background: linear-gradient(135deg, #e53935, #c62828);
+}
+
+/* Hover Effects */
+.dashboard-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+</style>
+
+<div class="container dashboard-card">
+  <h2>Patient Dashboard</h2>
+  <p class="welcome">Welcome, {{ user.username }}!</p>
+
+  <div class="dashboard-buttons">
+    <a href="{% url 'register_patient' %}" class="dashboard-btn register-btn">🩺 Register Patient</a>
+    <a href="{% url 'appointment_list' %}" class="dashboard-btn appointment-btn">📅 View Appointments</a>
+    <a href="{% url 'logout' %}" class="dashboard-btn logout-btn">🚪 Logout</a>
+  </div>
+</div>
+{% endblock %}

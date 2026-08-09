@@ -1,0 +1,43 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/hospital.css' %}">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Smart Hospital{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/hospital.css' %}">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="/patients/register/">Register Patient</a>
+        <a href="/patients/patients/">Patients</a>
+        <a href="/patients/appointment/">Schedule Appointment</a>
+        <a href="/patients/appointments/">Appointments</a>
+        <a href="/staff/doctors/">Doctors</a>
+        <a href="/staff/staff/">Staff</a>
+        <a href="/billing/bills/">Bills</a>
+        <a href="/billing/claims/">Claims</a>
+        <a href="/reports/dashboard/">Reports</a>
+        <a href="{% url 'logout' %}">Logout</a>
+    </nav>
+
+    
+    <!-- Page Content -->
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    {% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+      <li class="{{ message.tags }}">{{ message }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
+
+
+</body>
+</html>

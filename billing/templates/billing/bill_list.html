@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Bills{% endblock %}
+{% block content %}
+<h2>Bills</h2>
+<table>
+    <thead>
+        <tr><th>Patient</th><th>Amount</th><th>Description</th><th>Date</th></tr>
+    </thead>
+    <tbody>
+        {% for bill in bills %}
+        <tr>
+            <td>{{ bill.patient.name }}</td>
+            <td>₹{{ bill.amount }}</td>
+            <td>{{ bill.description }}</td>
+            <td>{{ bill.date }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

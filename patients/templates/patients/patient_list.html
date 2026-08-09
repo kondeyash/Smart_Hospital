@@ -1,0 +1,80 @@
+<!-- {% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patients</title>
+    <link rel="stylesheet" href="{% static 'css/hospital.css' %}">
+</head>
+<body>
+    <nav> ...same links... </nav>
+
+    <div class="container">
+        <h2>All Patients</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Disease</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for patient in patients %}
+                <tr>
+                    <td>{{ patient.name }}</td>
+                    <td>{{ patient.age }}</td>
+                    <td>{{ patient.medical_history }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html> -->
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Patients</title>
+    <link rel="stylesheet" href="{% static 'css/hospital.css' %}">
+</head>
+
+<body>
+    <nav>
+        <a href="/patients/register/">Register Patient</a>
+        <a href="/patients/patients/">Patients</a>
+        <a href="/patients/appointment/">Schedule Appointment</a>
+        <a href="/patients/appointments/">Appointments</a>
+        <a href="/staff/doctors/">Doctors</a>
+        <a href="/staff/staff/">Staff</a>
+        <a href="/billing/bills/">Bills</a>
+        <a href="/billing/claims/">Claims</a>
+        <a href="/reports/dashboard/">Reports</a>
+    </nav>
+
+    <div class="container">
+        <h2>All Patients</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Disease</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for patient in patients %}
+                <tr>
+                    <td>{{ patient.name }}</td>
+                    <td>{{ patient.age }}</td>
+                    <td>{{ patient.medical_history }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

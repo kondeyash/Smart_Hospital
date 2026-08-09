@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Appointments</title>
+    <link rel="stylesheet" href="{% static 'css/hospital.css' %}">
+</head>
+<body>
+    <nav>
+        <a href="/patients/register/">Register Patient</a>
+        <a href="/patients/patients/">Patients</a>
+        <a href="/patients/appointment/">Schedule Appointment</a>
+        <a href="/patients/appointments/">Appointments</a>
+        <a href="/staff/doctors/">Doctors</a>
+        <a href="/staff/staff/">Staff</a>
+        <a href="/billing/bills/">Bills</a>
+        <a href="/billing/claims/">Claims</a>
+        <a href="/reports/dashboard/">Reports</a>
+    </nav>
+
+    <div class="container">
+        <h2>Appointments</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Patient</th>
+                    <th>Doctor Name</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Reason</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for appointment in appointments %}
+                <tr>
+                    <td>{{ appointment.patient.name }}</td>
+                    <td>{{ appointment.doctor_name }}</td>
+                    <td>{{ appointment.date }}</td>
+                    <td>{{ appointment.time }}</td>
+                    <td>{{ appointment.reason }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

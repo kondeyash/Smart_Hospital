@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Staff Members{% endblock %}
+
+{% block content %}
+<h2>Staff Members</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Department</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for s in staff %}
+        <tr>
+            <td>{{ s.name }}</td>
+            <td>{{ s.age }}</td>
+            <td>{{ s.gender }}</td>
+            <td>{{ s.role }}</td> 
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

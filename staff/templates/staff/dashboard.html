@@ -1,0 +1,91 @@
+<!-- {% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Staff Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/hospital.css' %}">
+</head>
+<body>
+    <h1>Welcome, {{ request.user.username }}</h1>
+    <p>You are now logged in!</p>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Staff Dashboard</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #e6f0ff, #cce0ff);
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 { color: #004080; }
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 80%;
+        }
+        th, td {
+            border: 1px solid #004080;
+            padding: 8px;
+        }
+        th {
+            background-color: #99ccff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome, {{ request.user.username }}</h1>
+    <h3>You are now logged in!</h3>
+
+    <h2>Doctor Details</h2>
+    <table>
+        <tr><th>Name</th><th>Department</th><th>Age</th></tr>
+        {% for doctor in doctors %}
+        <tr>
+            <td>{{ doctor.name }}</td>
+            <td>{{ doctor.department }}</td>
+            <td>{{ doctor.age }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Bills</h2>
+    <table>
+        <tr><th>Patient</th><th>Amount</th><th>Date</th></tr>
+        {% for bill in bills %}
+        <tr>
+            <td>{{ bill.patient }}</td>
+            <td>{{ bill.amount }}</td>
+            <td>{{ bill.date }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Insurance Claims</h2>
+    <table>
+        <tr><th>Patient</th><th>Status</th><th>Claim Date</th></tr>
+        {% for claim in claims %}
+        <tr>
+            <td>{{ claim.patient }}</td>
+            <td>{{ claim.status }}</td>
+            <td>{{ claim.claim_date }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Reports</h2>
+    <table>
+        <tr><th>Report ID</th><th>Type</th><th>Date</th></tr>
+        {% for report in reports %}
+        <tr>
+            <td>{{ report.id }}</td>
+            <td>{{ report.type }}</td>
+            <td>{{ report.date }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Reports{% endblock %}
+{% block content %}
+<h2>Hospital Reports</h2>
+<table>
+    <thead>
+        <tr><th>Metric</th><th>Value</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Total Patients</td><td>{{ patient_count }}</td></tr>
+        <tr><td>Total Doctors</td><td>{{ doctor_count }}</td></tr>
+        <tr><td>Total Staff</td><td>{{ staff_count }}</td></tr>
+        <tr><td>Total Bills</td><td>{{ total_bills }}</td></tr>
+        <tr><td>Total Revenue</td><td>₹{{ total_revenue }}</td></tr>
+        <tr><td>Claims Pending</td><td>{{ claims_pending }}</td></tr>
+        <tr><td>Claims Approved</td><td>{{ claims_approved }}</td></tr>
+        <tr><td>Claims Rejected</td><td>{{ claims_rejected }}</td></tr>
+    </tbody>
+</table>
+{% endblock %}
