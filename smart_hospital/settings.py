@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-yj(ka3!ot4f0rjh$$=we(ttm5t3gjxaby3f@tt20x@p(!%=-=1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['smart-hospital-1-rdv0.onrender.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['smart-hospital-1-n4a1.onrender.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
